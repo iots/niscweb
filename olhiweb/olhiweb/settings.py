@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'history',
+    'online',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nisc_data',
-		'USER': 'root',
-		'PASSWORD': '_admin123',
-		'HOST': '192.168.7.238',
-		'PORT': '3306'
+        'USER': 'root',
+        'PASSWORD': '_admin123',
+        'HOST': '192.168.7.238',
+        'PORT': '3306'
     }
 }
 
