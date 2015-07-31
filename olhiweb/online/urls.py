@@ -1,5 +1,5 @@
 from django.conf.urls import  url,patterns
 
 urlpatterns = patterns("",
-    url(r'^online/$','online.views.online',name='online'),
+    url(r'^list/$','online.views.online',name='online'),
 )

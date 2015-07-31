@@ -4,12 +4,10 @@ from online.models import ShowEndAlive
 
 # Create your views here.
 def online(request):
-    page = int(request.GET['page'])
+    page = int(request.GET.get('page',1))
     pe = 4
     pf = 5
     pview = pe+pf+1
-    prepage = page-1
-    nextpage = page+1
     onlinelist = ShowEndAlive.objects.all()
     try:
         p = Paginator(onlinelist,10)
