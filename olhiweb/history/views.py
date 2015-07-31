@@ -13,15 +13,20 @@ def history(request):
     pe = 4
     pf = 5
     pview = pe+pf+1
-    prepage = page-1
-    nextpage = page+1
+
     historylist = ShowPushMessage.objects.all()
-    p = Paginator(historylist,10)
-    if page < 0:
-        page = 1
-    if page > p.num_pages:
-        page = p.num_pages
-    pagelist = p.page(page).object_list
+    try:
+        p = Paginator(historylist,10)
+        if page < 0:
+            page = 1
+        if page > p.num_pages:
+            page = p.num_pages
+        prepage = page-1
+        nextpage = page+1
+        pagelist=[]
+        pagelist = p.page(page).object_list
+    except:
+        print("except")
     if page > pf:
         page_range=p.page_range[page-pf-1:page+pe]
     else:
